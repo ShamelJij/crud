@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function AddTopic() {
   const [title, setTitle] = useState("");
@@ -23,8 +23,8 @@ export default function AddTopic() {
         body: JSON.stringify({ title, description }),
       });
       if (!res.ok) {
-        router.refresh();
-        router.push("/");
+        await router.refresh();
+        await router.push("/");
       } else {
         throw new Error("Failed to create a topic");
       }
