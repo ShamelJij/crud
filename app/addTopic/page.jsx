@@ -22,9 +22,9 @@ export default function AddTopic() {
         },
         body: JSON.stringify({ title, description }),
       });
-      if (!res.ok) {
-        await router.refresh();
+      if (res.ok) {
         await router.push("/");
+        await router.refresh();
       } else {
         throw new Error("Failed to create a topic");
       }
