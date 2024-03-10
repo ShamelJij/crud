@@ -6,7 +6,7 @@ export default function Navbar() {
         App for CRUD Operations
       </Link>
       <Link className="bg-white p-2" href={"/addTopic"}>
-        Add a Topic
+        Add Topic
       </Link>
     </nav>
   );
